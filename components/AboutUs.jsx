@@ -6,7 +6,7 @@ const AboutUs = () => {
   return (
     <Box sx={{ width: "100vw", bgcolor: "black", pb: "5rem" }}>
       <Container maxWidth="md" direction="column" sx={{ pt: "5rem" }}>
-        {/* about us */}
+        {/* about us !!!*/}
         <Grid item sx={{ position: "relative" }}>
           <Typography
             variant="h3"
@@ -36,7 +36,7 @@ const AboutUs = () => {
             color="#68F8F8"
             sx={{ textTransform: "uppercase", fontWeight: "bold", ml: 8 }}
           >
-            Nous sommes plus qu'une entrepise de consulting
+            Nous sommes plus que une entrepise de consulting
           </Typography>
         </Grid>
       </Container>
