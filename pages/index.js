@@ -7,6 +7,8 @@ import HeroSection from './../components/HeroSection';
 import OurServices from './../components/OurServices';
 import AboutUs from '../components/AboutUs';
 import ContactUs from '../components/ContactUs';
+import Carousel from '../components/Carousel';
+import BootstrpCarousel from '../components/BootstrpCarousel';
 
 export default function Home() {
   return (
@@ -18,7 +20,9 @@ export default function Home() {
       </Head>
       <Layout>
         <main>
-          <HeroSection />
+          {/* <HeroSection /> */}
+          {/* <BootstrpCarousel /> */}
+          <Carousel />
           <OurServices />
           <AboutUs />
           <ContactUs />

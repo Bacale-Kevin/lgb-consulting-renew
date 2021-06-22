@@ -76,10 +76,10 @@ const Header = (props) => {
                   // className={classes.link}
                   sx={{
                     fontSize: "0.87rem",
-                    color: "#fff",
+                    color: "#000",
                     fontFamily: "Rubik",
-                    fontWeight: "bold",
-                    fonstWeight: router.pathname === link && "",
+                    fontWeight: "regular",
+                    fonstWeight: router.pathname === link && "bold",
                     // opacity: router.pathname !== link && 0.8,
                     borderBottom: router.pathname === link && 2,
                     borderColor: "secondary.main",
@@ -154,8 +154,8 @@ const Header = (props) => {
     <React.Fragment>
       <CssBaseline />
       <ElevationScroll {...props}>
-        <AppBar>
-          <Toolbar>
+        <AppBar  sx={{ }}>
+          <Toolbar  >
             {/* <Container> */}
             <Grid container>
               <Grid
@@ -171,6 +171,7 @@ const Header = (props) => {
                   <Image
                     src="/images/header-logo-blue.png"
                     alt="logo"
+                    priority
                     width={150}
                     height={40}
                   />

@@ -1,1 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+.carousel-control-next,
+.carousel-control-prev {
+    width: 7% !important;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    width: 12px !important;
+    height: 12px !important;
+}
