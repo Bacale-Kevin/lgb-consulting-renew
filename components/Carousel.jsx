@@ -5,357 +5,65 @@ import Image from "next/image";
 import { Grid, Typography, Container } from "@material-ui/core";
 import { Fade } from "react-reveal";
 import Link from "next/link";
+import { Box } from "@material-ui/core";
 
 const CarouselSlider = () => {
   const [state, setState] = useState(0);
   console.log({ state });
   return (
     <Carousel
-      infiniteLoop
-      autoPlay
-      interval={4000}
-      showStatus={false}
+      autoPlay={true}
+      showArrows
       showThumbs={false}
+      stopOnHover={false}
+      dynamicHeight={false}
+      infiniteLoop
+      transitionTime={1000}
+      interval={7000}
+      showIndicators={true}
+      showStatus={false}
       onChange={(index) => setState(index)}
     >
-      {/* 1 */}
-
-      {state === 0 ? (
-        <>
-          <Link href="#">
-            <a>
-              <Grid container>
-                <Image
-                  width={3000}
-                  priority
-                  height={1200}
-                  src="/images/carlos.jpg"
-                  alt="1"
-                />
-
-                <Container>
-                  <Grid
-                    container
-                    sx={{
-                      position: "absolute",
-                      zIndex: 1,
-                      top: "140px",
-                      ml: 5,
-                      //   bgcolor: "tomato",
-                    }}
-                  >
-                    {/* first item */}
-                    <Grid item md={12} sx={{}}>
-                      <Grid
-                        container
-                        direction="column"
-                        justifyContent="center"
-                        alignItems="flex-end"
-                      >
-                        <Fade top delay={1500}>
-                          <Grid xs={12} md={5} item sx={{ mr: 20 }}>
-                            <Typography
-                              align="start"
-                              sx={{
-                                color: "#fff",
-                                fontFamily: "Rubik",
-                                fontSize: "2.7rem",
-                                fontWeight: 700,
-                                width: "100%",
-                                lineHeight: "50px",
-                              }}
-                            >
-                              EXPERTISE SAP CRM
-                            </Typography>
-                          </Grid>
-                        </Fade>
-                        <Fade top delay={1700}>
-                          <Grid item color="white" sx={{ pt: 5, mr: 22 }}>
-                            Expertise 360° du cadrage à l’intégration à votre
-                            périmètre SI
-                          </Grid>
-                        </Fade>
-                      </Grid>
-                    </Grid>
-
-                    {/* second item */}
-
-                    <Grid item md={6} sx={{ mt: -10, mr: 4 }}>
-                      {/* <Image
-                        src="/images/analysis.jpg"
-                        alt="header-image"
-                        priority
-                        width={500}
-                        height={500}
-                      /> */}
-                    </Grid>
-                  </Grid>
-                </Container>
-              </Grid>
-            </a>
-          </Link>
-        </>
-      ) : null}
-
-      {/* 2 */}
-      {state === 1 ? (
-        <div>
-          <Image
-            width={3000}
-            priority
-            height={1200}
-            src="/images/analysis1.png"
-            alt="1"
-          />
-          <Container>
-            <Grid
-              container
-              sx={{
-                position: "absolute",
-                zIndex: 1,
-                top: "140px",
-                ml: 5,
-                //   bgcolor: "tomato",
-              }}
-            >
-              {/* first item */}
-              <Grid item md={12} sx={{}}>
-                <Grid
-                  container
-                  direction="column"
-                  justifyContent="center"
-                  alignItems="flex-end"
-                  sx={{ bgcolor: "rgba(0,0,0,0.5)", width: "50%", py: 7 }}
-                >
-                  <Fade right delay={1000}>
-                    <Grid xs={12} item sx={{ mr: 20 }}>
+      <Box sx={{ width: "100vw", position: "relative" }}>
+        <Image width={3000} height={1300} src="/images/carlos.jpg" alt="1" />
+        {state === 0 && (
+          <Container
+            sx={{
+            //   bgcolor: "tomato",
+              position: "absolute",
+              zIndex: 1,
+              top: "7rem",
+              right: "1rem",
+              width: "70%",
+              ml: "8rem",
+            }}
+          >
+            <Grid container direction="row-reverse" spacing={5} justifyContent="center" sx={{}}>
+              <Grid item lg={5}>
+                <Grid container>
+                  <Fade top delay={700}>
+                    <Grid item>
                       <Typography
-                        align="start"
+                        align="left"
+                        color="white"
                         sx={{
-                          color: "#fff",
                           fontFamily: "Rubik",
+                          fontWeight: 500,
                           fontSize: "2.7rem",
-                          fontWeight: 700,
-                          width: "120%",
-                          lineHeight: "50px",
-                          // opacity: 1
                         }}
                       >
-                        CRM PRACTISE LEAD
-                      </Typography>
-                    </Grid>
-                  </Fade>
-                  <Fade right delay={1200}>
-                    <Grid item sx={{ pt: 2 }}>
-                      <Typography
-                        align="left"
-                        color="white"
-                        sx={{ width: "80%", ml: 8 }}
-                      >
-                        Elaboration de votre patrimoine de fonctionnalités et
-                        favoriser la transformation dans toute application
-                        choisie par vos soins
-                      </Typography>
-                    </Grid>
-                  </Fade>
-                </Grid>
-              </Grid>
-              {/* second item */}
-
-              <Grid item md={6} sx={{ mt: -10, mr: 4 }}>
-                {/* <Image
-                    src="/images/analysis.jpg"
-                    alt="header-image"
-                    priority
-                    width={500}
-                    height={500}
-                  /> */}
-              </Grid>
-            </Grid>
-          </Container>
-        </div>
-      ) : null}
-
-      {state === 2 ? (
-        <div>
-          <Image
-            width={3000}
-            priority
-            height={1200}
-            src="/images/laptop.jpg"
-            alt="1"
-          />
-          <Container>
-            <Grid
-              container
-              sx={{
-                position: "absolute",
-                zIndex: 1,
-                top: "140px",
-                ml: 5,
-                //   bgcolor: "tomato",
-              }}
-            >
-              {/* first item */}
-              <Grid item md={12} sx={{}}>
-                <Grid
-                  container
-                  direction="column"
-                  justifyContent="center"
-                  alignItems="flex-start"
-                  sx={{}}
-                >
-                  <Fade left delay={700}>
-                    <Grid xs={12} item sx={{}}>
-                      <Typography
-                        align="start"
-                        sx={{
-                          color: "#fff",
-                          fontFamily: "Rubik",
-                          fontSize: "2.7rem",
-                          fontWeight: 700,
-                          width: "90%",
-                          lineHeight: "50px",
-                          // opacity: 1
-                        }}
-                      >
-                        DEVELOPEMENT DES APPLICATION
-                      </Typography>
-                    </Grid>
-                  </Fade>
-                  <Fade left delay={1500}>
-                    <Grid item sx={{ pt: 2 }}>
-                      <Typography
-                        align="left"
-                        color="white"
-                        sx={{
-                          width: "80%",
-                          ml: 8,
-                          opacity: 0.9,
-                          fontFamily: "Rubik",
-                          fontSize: "1.7rem",
-                          fontWeight: 500,
-                        }}
-                      >
-                        WEB
+                        CRM PRACTICE LEAD
                       </Typography>
                     </Grid>
                   </Fade>
 
-                  <Fade left delay={1700}>
-                    <Grid item sx={{ pt: 1 }}>
-                      <Typography
-                        align="left"
-                        color="white"
-                        sx={{
-                          width: "80%",
-                          ml: 17,
-                          fontFamily: "Rubik",
-                          fontSize: "1.7rem",
-                          opacity: 0.9,
-                          fontWeight: 500,
-                        }}
-                      >
-                        MOBILE
-                      </Typography>
-                    </Grid>
-                  </Fade>
-
-                  <Fade left delay={1900}>
-                    <Grid item sx={{ pt: 1 }}>
-                      <Typography
-                        align="left"
-                        color="white"
-                        sx={{
-                          width: "80%",
-                          ml: 30,
-                          opacity: 0.9,
-                          fontFamily: "Rubik",
-                          fontSize: "1.7rem",
-                          fontWeight: 500,
-                        }}
-                      >
-                        DESKTOP
-                      </Typography>
-                    </Grid>
-                  </Fade>
-                </Grid>
-              </Grid>
-              {/* second item */}
-
-              <Grid item md={6} sx={{ mt: -10, mr: 4 }}>
-                {/* <Image
-                      src="/images/analysis.jpg"
-                      alt="header-image"
-                      priority
-                      width={500}
-                      height={500}
-                    /> */}
-              </Grid>
-            </Grid>
-          </Container>
-        </div>
-      ) : null}
-
-      {state === 3 ? (
-        <div>
-          <Image
-            width={3000}
-            priority
-            height={1200}
-            src="/images/team.jpg"
-            alt="1"
-          />
-          <Container>
-            <Grid
-              container
-              sx={{
-                position: "absolute",
-                zIndex: 1,
-                top: "140px",
-                ml: 5,
-                //   bgcolor: "tomato",
-              }}
-            >
-              {/* first item */}
-              <Grid item md={12} sx={{}}>
-                <Grid
-                  container
-                  direction="column"
-                  justifyContent="center"
-                  alignItems="flex-start"
-                  sx={{ bgcolor: "rgba(0,0,0,0.5)", width: "50%", py: 7 }}
-                >
                   <Fade bottom delay={1000}>
-                    <Grid
-                      xs={12}
-                      item
-                      sx={{ display: "flex", justifyContent: "center" }}
-                    >
-                      <Typography
-                        // align="left"
-                        sx={{
-                          color: "#fff",
-                          fontFamily: "Rubik",
-                          fontSize: "2.7rem",
-                          fontWeight: 700,
-                          width: "100%",
-                          lineHeight: "50px",
-                          //   mr: 50,
-                          ml: 8,
-                          // opacity: 1
-                        }}
-                      >
-                        IT CONSULTING
-                      </Typography>
-                    </Grid>
-                  </Fade>
-                  <Fade bottom delay={1200}>
-                    <Grid item sx={{ pt: 2 }}>
+                    <Grid item>
                       <Typography
                         align="left"
+                        variant="subtitle1"
                         color="white"
-                        sx={{ width: "80%", ml: 8 }}
+                        sx={{ opacity: 1 }}
                       >
                         Elaboration de votre patrimoine de fonctionnalités et
                         favoriser la transformation dans toute application
@@ -365,98 +73,165 @@ const CarouselSlider = () => {
                   </Fade>
                 </Grid>
               </Grid>
-              {/* second item */}
 
-              <Grid item md={6} sx={{ mt: -10, mr: 4 }}>
-                {/* <Image
-                      src="/images/analysis.jpg"
-                      alt="header-image"
-                      priority
-                      width={500}
-                      height={500}
-                    /> */}
-              </Grid>
+              <Fade left delay={2200}>
+                <Grid item>
+                  <Image
+                    src="/images/graph.png"
+                    alt="graph"
+                    width={300}
+                    height={300}
+                    priority
+                  />
+                </Grid>
+              </Fade>
             </Grid>
           </Container>
-        </div>
-      ) : null}
+        )}
+      </Box>
 
-      {state === 4 ? (
-        <div>
-          <Image
-            width={3000}
-            priority
-            height={1200}
-            src="/images/startup.jpg"
-            alt="1"
-          />
-          <Container>
-            <Grid
-              container
+      <Box sx={{ width: "100vw" }}>
+        <Image width={3000} height={1300} src="/images/analysis1.png" alt="1" />
+        {state === 1 && (
+          <Container
+          sx={{
+            bgcolor: "rgba(0,0,0,0.5)",
+            pt: 5,
+            pb:5,
+            position: "absolute",
+            zIndex: 1,
+            top: "7rem",
+            left: "1rem",
+            width: "70%",
+            // ml: "8rem",
+          }}
+        >
+          <Grid container direction="row" alignItems="center" spacing={0} justifyContent="center" sx={{}}>
+            <Grid item lg={5}>
+              <Grid container>
+                <Fade top delay={700}>
+                  <Grid item>
+                    <Typography
+                      align="left"
+                      color="white"
+                      sx={{
+                        fontFamily: "Rubik",
+                        fontWeight: 500,
+                        fontSize: "2.7rem",
+                      }}
+                    >
+                      Expertise SAP CRM
+                    </Typography>
+                  </Grid>
+                </Fade>
+
+                <Fade bottom delay={1000}>
+                  <Grid item>
+                    <Typography
+                      align="left"
+                      variant="subtitle1"
+                      color="white"
+                      sx={{ opacity: 1 }}
+                    >
+                     Expertise 360° du cadrage à l’intégration à votre périmètre SI
+                    </Typography>
+                  </Grid>
+                </Fade>
+              </Grid>
+            </Grid>
+
+            <Fade right delay={2200}>
+              <Grid item sx={{ bgcolor: "rgba(255,255,255,0.7)", p: 1}}>
+                <Image
+                  src="/images/sap.png"
+                  alt="graph"
+                  width={300}
+                  height={250}
+                  priority
+                />
+              </Grid>
+            </Fade>
+          </Grid>
+        </Container>
+        )}
+      </Box>
+
+      <Box sx={{ width: "100vw" }}>
+        <Image width={3000} height={1300} src="/images/chair.jpg" alt="1" />
+        {state === 2 && (
+              <Container
               sx={{
+                // bgcolor: "rgba(0,0,0,0.5)",
+                pt: 5,
+                pb:5,
                 position: "absolute",
                 zIndex: 1,
-                top: "140px",
-                ml: 5,
-                //   bgcolor: "tomato",
+                top: "7rem",
+                left: "1rem",
+                width: "90%",
+                // ml: "8rem",
               }}
             >
-              {/* first item */}
-              <Grid item md={12} sx={{}}>
-                <Grid
-                  container
-                  direction="column"
-                  justifyContent="center"
-                  alignItems="flex-end"
-                  sx={{ bgcolor: "rgba(0,0,0,0.5)", width: "50%", py: 7 }}
-                >
-                  <Fade right delay={1000}>
-                    <Grid xs={12} item sx={{ mr: 20 }}>
-                      <Typography
-                        align="start"
-                        sx={{
-                          color: "#fff",
-                          fontFamily: "Rubik",
-                          fontSize: "2.7rem",
-                          fontWeight: 700,
-                          width: "120%",
-                          lineHeight: "50px",
-                          // opacity: 1
-                        }}
-                      >
-                        UX/UX DESIGN
-                      </Typography>
-                    </Grid>
-                  </Fade>
-                  <Fade right delay={1200}>
-                    <Grid item sx={{ pt: 2 }}>
-                      <Typography
-                        align="left"
-                        color="white"
-                        sx={{ width: "80%", ml: 8 }}
-                      >
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Sed consectetur,
-                      </Typography>
-                    </Grid>
-                  </Fade>
+              <Grid container direction="row" alignItems="center" spacing={0} justifyContent="center" sx={{}}>
+                <Grid item lg={6}>
+                  <Grid container>
+                    <Fade top delay={700}>
+                      <Grid item>
+                        <Typography
+                          align="left"
+                          color="white"
+                          sx={{
+                            fontFamily: "Rubik",
+                            fontWeight: 500,
+                            fontSize: "2.7rem",
+                          }}
+                        >
+                          DEVELOPEMENT DES APPLICATION
+                        </Typography>
+                      </Grid>
+                    </Fade>
+    
+                    <Fade bottom delay={1000}>
+                      <Grid item>
+                        <Typography
+                          align="left"
+                          variant="subtitle1"
+                          color="white"
+                          sx={{ opacity: 1 }}
+                        >
+                         Web, Mobile, Desktop
+                        </Typography>
+                      </Grid>
+                    </Fade>
+                  </Grid>
                 </Grid>
-              </Grid>
-              {/* second item */}
-
-              <Grid item md={6} sx={{ mt: -10, mr: 4 }}>
-                {/* <Image
-                      src="/images/analysis.jpg"
-                      alt="header-image"
+    
+                <Fade right delay={2200}>
+                  <Grid item sx={{  p: 1}}>
+                    <Image
+                      src="/images/multi-platform.png"
+                      alt="graph"
+                      width={350}
+                      height={300}
                       priority
-                      width={500}
-                      height={500}
-                    /> */}
+                    />
+                  </Grid>
+                </Fade>
               </Grid>
-            </Grid>
-          </Container>
-        </div>
-      ) : null}
+            </Container>        
+        )}
+      </Box>
+
+      {/* <Box sx={{ width: "100vw" }}>
+        <Image width={3000} height={1300} src="/images/analysis1.png" alt="1" />
+        {state === 0 && <></>}
+      </Box>
+
+      <Box sx={{ width: "100vw" }}>
+        <Image width={3000} height={1300} src="/images/analysis1.png" alt="1" />
+        {state === 0 && <></>}
+      </Box> */}
+
     </Carousel>
   );
 };
