@@ -76,7 +76,7 @@ const Header = (props) => {
                   // className={classes.link}
                   sx={{
                     fontSize: "0.87rem",
-                    color: "#000",
+                    color: "#fff",
                     fontFamily: "Rubik",
                     fontWeight: "regular",
                     fonstWeight: router.pathname === link && "bold",
