@@ -39,7 +39,7 @@ const BootstrpCarousel = () => {
                 ml: 14,
               }}
             >
-              QUAND L'IT EST FAIT POUR PARLER VOTRE MÉTIER
+              QUAND L EST FAIT POUR PARLER VOTRE MÉTIER
             </Typography>
           </Grid>
 
@@ -92,7 +92,7 @@ const BootstrpCarousel = () => {
                 ml: 14,
               }}
             >
-              QUAND L'IT EST FAIT POUR PARLER VOTRE MÉTIER
+              QUAND  EST FAIT POUR PARLER VOTRE MÉTIER
             </Typography>
           </Grid>
 
